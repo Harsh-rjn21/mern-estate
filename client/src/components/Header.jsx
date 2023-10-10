@@ -47,7 +47,7 @@ export default function Header() {
           ): (
 
           <li className=" text-slate-600 hover:underline cursor-pointer">
-            SignUp
+            SignIn
           </li>
           )}
             </Link>
