@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import userRoute from "./routes/user.route.js";
 import signUpRoute from "./routes/auth.route.js";
 import cookieParser from "cookie-parser";
+import listingRouter from "./routes/listing.route.js";
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ app.listen(3000, () => {
 
 app.use("/api/user", userRoute);
 app.use("/api/auth", signUpRoute);
+app.use("/api/listing", listingRouter);
 
 
 // middleware
