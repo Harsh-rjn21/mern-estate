@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../components/OAuth";
-import { signInFaliure, signInStart, signInSuccess } from "../redux/user/userSlice";
+import { signInFailure, signInStart, signInSuccess } from "../redux/user/userSlice";
 
 
 
@@ -33,13 +33,13 @@ export default function SignIn() {
       const data = await res.json();
       console.log(data);
       if (data.success === false) {
-        dispatch(signInFaliure(data.message));
+        dispatch(signInFailure(data.message));
         return;
       }
       dispatch(signInSuccess(data));
       navigate("/");
     } catch (err) {
-      dispatch(signInFaliure(err.message));
+      dispatch(signInFailure(err.message));
     }
   };
 
